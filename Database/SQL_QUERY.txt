@@ -1,0 +1,13 @@
+"Elenco degli appuntamenti di un certo consulente schedulati per la data odierna"
+
+SELECT A.ID_appuntamento, A.cliente_appuntamento, A.metodo
+FROM Appuntamenti AS A, Consulenti AS C
+WHERE C.ID_consulente = ? AND C.ID_consulente = A.consulente_appuntamento AND A.data_appuntamento = getdate()
+GROUP BY A.ID_appuntamento
+
+"Numero delle auto di costo superiore ai 25000 euro vendute il mese scorso"
+
+SELECT M.ID_macchina, M.marca, M.modello, M.targa, A.prezzo_acquisto
+FROM Macchine AS M, Acquisti AS A
+WHERE M.ID_macchina = A.vettura_acquisto AND A.prezzo_acquisto > 25000 AND DATEPART(m, data_acquisto) = DATEPART(m, DATEADD(m, -1, getdate())) AND DATEPART(yyyy, data_acquisto) = DATEPART(yyyy, DATEADD(m, -1, getdate()))
+GROUP BY M.ID_macchina
