@@ -5,7 +5,7 @@ marca VARCHAR(45) NOT NULL,
 modello VARCHAR(45) NOT NULL,
 tipo VARCHAR(45) NOT NULL,
 anno YEAR NOT NULL,
-prezzo VARCHAR(45) NOT NULL,
+prezzo FLOAT NOT NULL,
 descrizione_macchina VARCHAR(45) NOT NULL,
 porte INT NOT NULL,
 posti INT NOT NULL,
@@ -32,7 +32,7 @@ consulente_appuntamento INT NOT NULL,
 cliente_appuntamento VARCHAR(45) NOT NULL,
 data_appuntamento DATE NOT NULL,
 metodo VARCHAR(45) NOT NULL,
-preventivo VARCHAR(45) NOT NULL);
+preventivo VARCHAR(45));
 
 CREATE TABLE Guide (
 ID_guida INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
@@ -48,7 +48,7 @@ colore_acquisto INT NOT NULL,
 optional_acquisto INT NOT NULL,
 motore_acquisto INT NOT NULL,
 metodo_acquisto VARCHAR(45) NOT NULL,
-prezzo_acquisto VARCHAR(45) NOT NULL,
+prezzo_acquisto FLOAT NOT NULL,
 data_acquisto DATE NOT NULL);
 
 CREATE TABLE Colori (
@@ -63,10 +63,10 @@ CREATE TABLE Motori (
 ID_motore INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
 motore VARCHAR(45) NOT NULL,
 cavalli INT NOT NULL,
-cc VARCHAR(45) NOT NULL,
+cc FLOAT NOT NULL,
 carburante VARCHAR(45) NOT NULL,
 cambio VARCHAR(45) NOT NULL,
-classe_emissioni INT NOT NULL);
+classe_emissioni VARCHAR(45) NOT NULL);
 
 CREATE TABLE Macchine_Motori (
 ID_macchina_motore INT NOT NULL PRIMARY KEY,
