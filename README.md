@@ -10,11 +10,11 @@ L’autosalone ha 4 stanze per i consulenti, con i relativi terminali, un serviz
 
 # TO DO
 Il candidato analizzi la realtà di riferimento e, fatte le opportune ipotesi aggiuntive, individui una soluzione che a suo motivato giudizio sia la più idonea a sviluppare i seguenti punti:
-- [ ] il dimensionamento del progetto, con numero di utenti stimato e altre quantità significative
-- [ ] un modello grafico che rappresenti il sistema, ne ponga in evidenza i vari componenti e le loro interconnessioni, motivando le scelte effettuate
-- [ ]	una descrizione, anche utilizzando uno schema grafico, con le funzionalità tecnologiche che dovranno possedere i dispositivi terminali utente e quelli aziendali dislocati nei punti strategici dei locali
+- [ ]   il dimensionamento del progetto, con numero di utenti stimato e altre quantità significative
+- [ ]   un modello grafico che rappresenti il sistema, ne ponga in evidenza i vari componenti e le loro interconnessioni, motivando le scelte effettuate
+- [ ]   una descrizione, anche utilizzando uno schema grafico, con le funzionalità tecnologiche che dovranno possedere i dispositivi terminali utente e quelli aziendali dislocati nei punti strategici dei locali
 - [ ]	l’individuazione dei protocolli di comunicazione da adottare per garantire la sicurezza da attacchi informatici e la resilienza a guasti e malfunzionamenti delle applicazioni e le relative tecnologie
-- [ ]	la definizione del database del sistema, sotto forma di entità relazione e schema logico 
+- [x]	la definizione del database del sistema, sotto forma di entità relazione e di schema logico 
 - [ ]	il progetto dell’interfaccia grafica, sotto forma di rappresentazione grafica
 - [ ]	l’implementazione di una parte significativa dell'interfaccia grafica dell’applicazione
 - [ ]	l’implementazione del database e dell’applicazione su una macchina locale, on-premises o in cloud
@@ -23,3 +23,5 @@ Il candidato analizzi la realtà di riferimento e, fatte le opportune ipotesi ag
     - [ ]	Elenco degli appuntamenti di un certo consulente schedulati per la data odierna
     - [ ]	Numero delle auto di costo superiore ai 25000 euro vendute il mese scorso
 - [ ]	un “executive summary” del progetto redatto in lingua inglese, che presenti il progetto in un’ottica di business. 
+## TO BE REVISED
+- [ ]	la definizione del database del sistema, sotto forma di entità relazione e di schema logico ``` potrebbero esserci errori superficiali nello schema, manca da caricare schema logico ```
