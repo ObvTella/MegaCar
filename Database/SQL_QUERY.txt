@@ -1,6 +1,6 @@
 "Elenco degli appuntamenti di un certo consulente schedulati per la data odierna"
 
-SELECT A.ID_appuntamento, A.cliente_appuntamento, A.metodo
+SELECT A.ID_appuntamento, A.cliente_appuntamento, A.metodo, A.ora_appuntamento
 FROM Appuntamenti AS A, Consulenti AS C
 WHERE C.ID_consulente = ? AND C.ID_consulente = A.consulente_appuntamento AND A.data_appuntamento = getdate()
 GROUP BY A.ID_appuntamento
