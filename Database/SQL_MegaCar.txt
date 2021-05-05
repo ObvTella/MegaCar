@@ -31,6 +31,7 @@ ID_appuntamento INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
 consulente_appuntamento INT NOT NULL,
 cliente_appuntamento VARCHAR(45) NOT NULL,
 data_appuntamento DATE NOT NULL,
+ora_appuntamento TIME NOT NULL,
 metodo VARCHAR(45) NOT NULL,
 preventivo VARCHAR(45));
 
@@ -38,7 +39,8 @@ CREATE TABLE Guide (
 ID_guida INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
 cliente_guida VARCHAR(45) NOT NULL,
 veicolo_guida INT NOT NULL,
-data_guida DATE NOT NULL);
+data_guida DATE NOT NULL,
+ora_guida TIME NOT NULL);
 
 CREATE TABLE Acquisti (
 ID_acquisto INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
