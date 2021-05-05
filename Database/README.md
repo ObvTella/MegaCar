@@ -1,6 +1,5 @@
 # Schema ER
-![MegaCarER](https://raw.githubusercontent.com/ObvTella/MegaCar/main/Database/MegaCarER.png)
-
+![MegaCarER]
 # SQL
 ```
 CREATE TABLE Macchine (
@@ -36,6 +35,7 @@ ID_appuntamento INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
 consulente_appuntamento INT NOT NULL,
 cliente_appuntamento VARCHAR(45) NOT NULL,
 data_appuntamento DATE NOT NULL,
+ora_appuntamento TIME NOT NULL,
 metodo VARCHAR(45) NOT NULL,
 preventivo VARCHAR(45));
 
@@ -43,7 +43,8 @@ CREATE TABLE Guide (
 ID_guida INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
 cliente_guida VARCHAR(45) NOT NULL,
 veicolo_guida INT NOT NULL,
-data_guida DATE NOT NULL);
+data_guida DATE NOT NULL,
+ora_guida TIME NOT NULL);
 
 CREATE TABLE Acquisti (
 ID_acquisto INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
@@ -114,7 +115,7 @@ ALTER TABLE Dettagli_Usato ADD FOREIGN KEY (ID_macchina) REFERENCES Macchine(ID_
 # Query
 - Elenco degli appuntamenti di un certo consulente schedulati per la data odierna
 ```
-SELECT A.ID_appuntamento, A.cliente_appuntamento, A.metodo
+SELECT A.ID_appuntamento, A.cliente_appuntamento, A.metodo, A.ora_appuntamento
 FROM Appuntamenti AS A, Consulenti AS C
 WHERE C.ID_consulente = ? AND C.ID_consulente = A.consulente_appuntamento AND A.data_appuntamento = getdate()
 GROUP BY A.ID_appuntamento
