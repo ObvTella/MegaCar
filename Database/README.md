@@ -1,5 +1,5 @@
 # Schema ER
-![MegaCarER]
+![MegaCarER](https://raw.githubusercontent.com/ObvTella/MegaCar/main/Database/MegaCarER.png)
 # SQL
 ```
 CREATE TABLE Macchine (
