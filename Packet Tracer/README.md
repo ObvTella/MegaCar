@@ -3,7 +3,7 @@
 # Descrizione:
 L’autosalone ha 4 stanze per i consulenti, con i relativi terminali, un servizio WiFi riservato ai dipendenti ed una rete WiFi per i clienti in visita. 
 
-# PIANO INDIRIZZI
+## PIANO INDIRIZZI
 ### Switch Consulenti
 |  | _**Switch Consulenti**_ | 8 Dispositivi |  |
 |:-- | :-: | :-: | :-: |
@@ -20,7 +20,43 @@ L’autosalone ha 4 stanze per i consulenti, con i relativi terminali, un serviz
 |**Range:**| 192.168.2.2 | 192.168.2.62 | MAX: 62 host|
 |**Broadcast**| 192.168.2.63 |
 
-### Motivazioni:
+## Packet tracer setup
+### Router:
+  ```
+  >enable
+  >config terminal
+  ```
+* Switch Consulenti
+  ```
+  >interface fastethernet0/0
+  >ip address 192.168.1.1 255.255.255.240
+  >no shutdown
+  ```
+* Switch Clienti
+  ```
+  >interface fastethernet6/0
+  >ip address 192.168.2.1 255.255.255.192
+  >no shutdown
+  ```
+### DHCP Server:
+Services > DHCP
+  
+   * Service: ON
+   * Pool Name : ``` serverPoolConsulenti ``` / ``` serverPoolClienti ```
+   * Default Gateway : ``` 192.168.1.1 ``` / ``` 192.168.2.1 ```
+   * Start IP address: ``` 192.168.1.2 ``` / ``` 192.168.2.2 ```
+   * Subnet mask: ``` 255.255.255.240 ``` / ```255.255.255.192 ```
+   * Maximum Number of Users: ``` 14 ``` / ``` 62 ```
+
+### Internet:
+Si tratta ovviamente di una simulazione teorica di Internet
+  ```
+  >interface serial2/0
+  >ip address 20.0.0.1 255.0.0.0
+  >no shutdown
+  ```
+
+## Motivazioni:
 Usiamo un router [inserisci modello] per gestire le due LAN {Clienti e Consulenti}
 Le lan sono definite da due switch [inserisci modello], connessi tramite Ethernet, alla quale vengono connessi due server DHCP che gestiscono la configurazione degli ip automaticamente. Ad ogni switch viene connesso un access point [inserisci modello] capace di coprire [inserisci metri: 500?] che servono a dividere le due reti wifi {pubblica e privata} che usano il protocollo [802.11ax].
 La rete pubblica è aperta, quindi priva di password.
@@ -43,5 +79,5 @@ Questo assicura l'inefficacia di:
 
 Per assicurare la resilienza a guasti e malfunzionamenti delle applicazioni e le relative tecnologie viene, invece, raccomandato l'utilizzo di una regolare manutenzione da parte di un esperto. [Inserisci metodi di manutenzione]
 
-# TO DO
+## TO DO
 Dalla rete interna, con un dispositivo mobile, in prossimità di una vettura, consulenti e clienti potranno visualizzare maggiori informazioni relative alla vettura stessa. 
