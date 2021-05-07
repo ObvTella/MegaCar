@@ -11,13 +11,13 @@ L’autosalone ha 4 stanze per i consulenti, con i relativi terminali, un serviz
 # TO DO
 Il candidato analizzi la realtà di riferimento e, fatte le opportune ipotesi aggiuntive, individui una soluzione che a suo motivato giudizio sia la più idonea a sviluppare i seguenti punti:
 - [ ]   il dimensionamento del progetto, con numero di utenti stimato e altre quantità significative
-- [ ]   un modello grafico che rappresenti il sistema, ne ponga in evidenza i vari componenti e le loro interconnessioni, motivando le scelte effettuate
+- [x]   un modello grafico che rappresenti il sistema, ne ponga in evidenza i vari componenti e le loro interconnessioni, motivando le scelte effettuate
 - [ ]   una descrizione, anche utilizzando uno schema grafico, con le funzionalità tecnologiche che dovranno possedere i dispositivi terminali utente e quelli aziendali dislocati nei punti strategici dei locali
 - [ ]	l’individuazione dei protocolli di comunicazione da adottare per garantire la sicurezza da attacchi informatici e la resilienza a guasti e malfunzionamenti delle applicazioni e le relative tecnologie
 - [x]	la definizione del database del sistema, sotto forma di entità relazione e di schema logico 
-- [ ]	il progetto dell’interfaccia grafica, sotto forma di rappresentazione grafica
+- [x]	il progetto dell’interfaccia grafica, sotto forma di rappresentazione grafica
 - [ ]	l’implementazione di una parte significativa dell'interfaccia grafica dell’applicazione
-- [ ]	l’implementazione del database e dell’applicazione su una macchina locale, on-premises o in cloud
+- [x]	l’implementazione del database e dell’applicazione su una macchina locale, on-premises o in cloud
 - [ ]	una stima dei tempi per la realizzazione del progetto, evidenziando la correlazione fra le attività
 - [x]	Sviluppi in linguaggio SQL delle query che consentano di ottenere le seguenti informazioni:
     - [x]	Elenco degli appuntamenti di un certo consulente schedulati per la data odierna
