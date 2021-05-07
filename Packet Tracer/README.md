@@ -55,6 +55,14 @@ Si tratta ovviamente di una simulazione teorica di Internet
   >ip address 20.0.0.1 255.0.0.0
   >no shutdown
   ```
+## Riconoscimento auto
+Tramite l'uso delle Beacon Bluetooth l'utente avvicinandosi alla macchina interessata,
+connettendosi tramite bluetooth al dispositivo avra' in output 
+il link alla pagina contenente le informazioni dell'auto interessata.
+
+Il beacon bluetooth e' un trasmettitore hardware a basso consumo (Buetooth Low Eenergy) che comunica
+in broadcast bluetooth il suo ID che viene usato da un'app compatibile per fare determinate azioni, in questo caso
+rendirizzarci alla pagina web della macchina interessata
 
 ## Motivazioni:
 Usiamo un router [inserisci modello] per gestire le due LAN (Clienti e Consulenti)
@@ -89,8 +97,6 @@ Per assicurare la resilienza a guasti e malfunzionamenti delle applicazioni e le
 * [Inserisci metodi di manutenzione]
 
 ## TO DO
-Dalla rete interna, con un dispositivo mobile, in prossimità di una vettura, consulenti e clienti potranno visualizzare maggiori informazioni relative alla vettura stessa. 
-* Bluetooth beacon
+
 * Firewall 
-* Indirizzo pubblico seriale internet
 * Forse vlan?
