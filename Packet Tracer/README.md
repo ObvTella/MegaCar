@@ -1,4 +1,4 @@
-![MegaCarInfrastruttura]()
+![MegaCarInfrastruttura](https://raw.githubusercontent.com/ObvTella/MegaCar/main/Packet%20Tracer/packet%20tracer.PNG)
 
 # Descrizione:
 L’autosalone ha 4 stanze per i consulenti, con i relativi terminali, un servizio WiFi riservato ai dipendenti ed una rete WiFi per i clienti in visita. 
