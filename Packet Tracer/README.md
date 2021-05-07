@@ -79,15 +79,16 @@ Questo assicura l'inefficacia di:
 * Spoofing / Sniffing 
 
 Per assicurare la resilienza a guasti e malfunzionamenti delle applicazioni e le relative tecnologie viene:
-* raccomandato l'utilizzo di una regolare manutenzione da parte di un esperto
+* Raccomandato l'utilizzo di una regolare manutenzione da parte di un esperto
 * Backup regolari
 * Ridondanza dei sistemi
 * Calcolo dei rischi
+* Antivirus software
+* Gestione autorizzazione file
 * [Inserisci metodi di manutenzione]
 
 ## TO DO
 Dalla rete interna, con un dispositivo mobile, in prossimità di una vettura, consulenti e clienti potranno visualizzare maggiori informazioni relative alla vettura stessa. 
-* Bluetooth beacon ``` soluzione adatta ma packet tracer poco chiaro sull'argomento, si connette ma non sembra trasmettere ```
-* Sensore di prossimita  ``` uno passa per sbaglio (spreco), ne vanno messi uno a direzione per auto (spreco), nuova rete o vlan (spreco)  ```
-* Tag NFC  ``` non ci sta su packet tracer  ```
-* QRCODE  ``` devi scansionarlo e non appare proprio automaticamente e non ci sta su packet tracer  ```
+* Bluetooth beacon
+* Firewall 
+* Indirizzo pubblico seriale internet
