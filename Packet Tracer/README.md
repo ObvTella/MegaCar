@@ -61,7 +61,7 @@ Usiamo un router [inserisci modello] per gestire le due LAN (Clienti e Consulent
 Le lan sono definite da due switch [inserisci modello], connessi tramite Ethernet [802.3], alla quale vengono connessi due server DHCP che gestiscono la configurazione degli ip automaticamente. Ad ogni switch viene connesso un access point [inserisci modello] capace di coprire [inserisci metri: 500?] che servono a dividere le due reti wifi (pubblica e privata) che usano il protocollo [802.11a].
 La rete pubblica è aperta, quindi priva di password.
 La rete privata invece utilizza il protocollo di autenticazione WPA2-PSK con crittografia AES per garantire un accesso sicuro alla rete utilizzata dai dipendenti.
-Ogni computer dedicato ai dipendenti offre un login sicuro tramite una buona policy di sicurezza sulle password (8+ caratteri, segni speciali, cambiata periodicamente)
+Ogni computer dedicato ai dipendenti offre un login sicuro tramite una buona policy di sicurezza sulle password (8+ caratteri, segni speciali, cambiata periodicamente) e un'autorizzazione a due fattori
 Il sito web, dove è possibile visionarie il catalogo delle auto in vendita, viene ospitato su un servizio di hosting esterno [aruba?].
 
 Per garantire la sicurezza vengono sfruttati:
@@ -85,6 +85,7 @@ Per assicurare la resilienza a guasti e malfunzionamenti delle applicazioni e le
 * Calcolo dei rischi
 * Antivirus software
 * Gestione autorizzazione file
+* Riconoscimento e Autenticazione
 * [Inserisci metodi di manutenzione]
 
 ## TO DO
@@ -92,3 +93,4 @@ Dalla rete interna, con un dispositivo mobile, in prossimità di una vettura, co
 * Bluetooth beacon
 * Firewall 
 * Indirizzo pubblico seriale internet
+* Forse vlan?
