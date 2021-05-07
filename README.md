@@ -23,6 +23,3 @@ Il candidato analizzi la realtà di riferimento e, fatte le opportune ipotesi ag
     - [x]	Elenco degli appuntamenti di un certo consulente schedulati per la data odierna
     - [x]	Numero delle auto di costo superiore ai 25000 euro vendute il mese scorso
 - [ ]	un “executive summary” del progetto redatto in lingua inglese, che presenti il progetto in un’ottica di business. 
-## TO BE REVISED
-- [ ]	Database del sistema ``` potrebbero esserci errori superficiali nello schema, manca da caricare schema logico ```
-    - [ ]	Query ``` se cambia db potrebbero variare gli attributi delle query, getdate and datepart vanno riviste ```
