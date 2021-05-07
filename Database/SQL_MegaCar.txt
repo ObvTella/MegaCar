@@ -16,7 +16,6 @@ username VARCHAR(45) NOT NULL PRIMARY KEY,
 password VARCHAR(45) NOT NULL,
 nome_cliente VARCHAR(45) NOT NULL,
 cognome_cliente VARCHAR(45) NOT NULL,
-patente VARCHAR(45) NOT NULL,
 email_cliente VARCHAR(45) NOT NULL,
 indirizzo VARCHAR(45) NOT NULL);
 
