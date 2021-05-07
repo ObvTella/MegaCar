@@ -1,7 +1,6 @@
 # Main Template
 Purple car hex color: #a55a86
+Revamped purple car color: #FF8BCE
 
 ### TO DO
-- Cambiare colore icone e tasto scopri (+ acceso)
-- Cambiare font sotto icone
 - Termini e condizioni
