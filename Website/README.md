@@ -6,7 +6,7 @@ Database adattato a Lumen   ```Clienti -> Clientes```
 phpMyAdmin: gestione database  
 app_Admin: simple work in progress gui per interfacciarsi col database solo per testing
 
-## Setup
+## Setup:
 ``` php -S localhost:82 -t ./public ```   
 
 [localhost:82/app_Admin/](localhost:82/app_Admin/)  
@@ -76,4 +76,5 @@ Interfaccia grafica ancora da creare
 	* Search function 
 	* API per altre tabelle
 	
+* Adattamento database a Lumen (```id``` come chiave primaria, plurali in singolari con s ```tabelle -> tabellas```
 * Interfaccia grafica
