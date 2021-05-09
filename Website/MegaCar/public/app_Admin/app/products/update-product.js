@@ -5,57 +5,77 @@ $(document).ready(function(){
         // get product id
 		var id = $(this).attr('data-id');
 		// read one record based on given product id
-		$.getJSON("http://localhost/esempiTW/REST/api/product/read_one.php?id=" + id, function(data){
+		$.getJSON("http://localhost:82/api/v1/clienti/" + id, function(data){
 			// values will be used to fill out our form
-			var name = data.name;
-			var price = data.price;
-			var description = data.description;
-			var category_id = data.category_id;
-			var category_name = data.category_name;
+			var x_id = data.id;
+			var x_username = data.username;
+			var x_password = data.password;
+			var x_nome = data.nome_cliente;
+			var x_cognome = data.cognome_cliente;
+			var x_email = data.email_cliente;
+			var x_indirizzo = data.indirizzo;
      
 			// store 'update product' html to this variable
 			var update_product_html=`
 				<div id='read-products' class='btn btn-primary pull-right m-b-15px read-products-button'>
-					<span class='glyphicon glyphicon-list'></span> Read Products
+					<span class='glyphicon glyphicon-list'></span> Modifica cliente
 				</div>
 			<!-- build 'update product' html form -->
 			<!-- we used the 'required' html5 property to prevent empty fields -->
 			<form id='update-product-form' action='#' method='post' border='0'>
 				<table class='table table-hover table-responsive table-bordered'>
  
-					<!-- name field -->
+ 					<!-- id field -->
 					<tr>
-						<td>Name</td>
-						<td><input value=\"` + name + `\" type='text' name='nome' class='form-control' required /></td>
+						<td>ID</td>
+						<td>` + id + `</td>
 					</tr>
  
-					<!-- price field -->
+					<!-- username field -->
 					<tr>
-						<td>Price</td>
-						<td><input value=\"` + price + `\" type='number' min='1' name='prezzo' class='form-control' required /></td>
+						<td>Username</td>
+						<td><input type='text' name='username' class='form-control' value=\"` + x_username + `\" required /></td>
 					</tr>
  
-					<!-- description field -->
+					<!-- password field -->
 					<tr>
-						<td>Description</td>
-						<td><textarea name='descrizione' class='form-control' required>` + description + `</textarea></td>
+						<td>Password</td>
+						<td><input type='password' name='password' class='form-control' value=\"` + x_password + `\" required /></td>
 					</tr>
  
-				<!-- category id field *NB* PER NOI LA CATEGORIA NON E' UN MENU (CI MANCA l'API PER AVERE LA LISTA DELLE CATEGORIE !!! -->
+					<!-- nome field -->
 					<tr>
-						<td>Category ID</td>
-						<td><input value=\"` + category_id + `\" type='number' name='cat_id' class='form-control' required /></td>
+						<td>Nome</td>
+						<td><input type='text' name='nome_cliente' class='form-control' value=\"` + x_nome + `\" required /></td>
 					</tr>
  
+					<!-- cognome field -->
 					<tr>
+						<td>Cognome</td>
+						<td><input type='text' name='cognome_cliente' class='form-control' value=\"` + x_cognome + `\" required /></td>
+					</tr>
  
-						<!-- hidden 'product id' to identify which record to delete -->
-						<td><input value=\"` + id + `\" name='id' type='hidden' /></td>
+					<!-- email field -->
+					<tr>
+						<td>Email</td>
+						<td><input type='email' name='email_cliente' class='form-control' value=\"` + x_email + `\" required /></td>
+					</tr>
+ 
+					<!-- indirizzo field -->
+					<tr>
+						<td>Indirizzo</td>
+						<td><input type='text' name='indirizzo' class='form-control' value=\"` + x_indirizzo + `\" required /></td>
+					</tr>
+					
+					<!-- hidden 'product id' to identify which record to delete -->
+					<td><input value=\"` + id + `\" name='id' type='hidden' /></td>
+ 
+					<tr>
 
 						<!-- button to submit form -->
 						<td>
 							<button type='submit' class='btn btn-info'>
-								<span class='glyphicon glyphicon-edit'></span> Update Product
+								<span class='glyphicon glyphicon-edit'></span> Aggiorna cliente
 							</button>
 						</td>
 
@@ -68,21 +88,21 @@ $(document).ready(function(){
 			$("#page-content").html(update_product_html);
  
 			// chage page title
-			changePageTitle("Update Product");				
+			changePageTitle("Modifica cliente");				
 		});
 		
     });
      
 	// will run if 'create product' form was submitted
-	$(document).on('submit', '#update-product-form', function(){
-     
+	$(document).on('submit', '#update-product-form', function()
+	{ 
 		// get form data
-		var form_data=JSON.stringify($(this).serializeObject());
+		var form_data = JSON.stringify($(this).serializeObject());
 		//console.log(form_data);
 		// submit form data to api
 		$.ajax({
-			url: "http://localhost/esempiTW/REST/api/product/update.php",
-			type : "POST",
+			url: "http://localhost:82/api/v1/clienti",
+			type : "PUT",
 			contentType : 'application/json',
 			data : form_data,
 			success : function(result) {
@@ -92,6 +112,7 @@ $(document).ready(function(){
 			error: function(xhr, resp, text) {
 				// show error to console
 				console.log(xhr, resp, text);
+				console.log(form_data);
 			}
 		});
 		return false;

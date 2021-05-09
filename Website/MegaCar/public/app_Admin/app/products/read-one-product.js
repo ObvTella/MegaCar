@@ -5,38 +5,62 @@ $(document).ready(function(){
         // get product id
 		var id = $(this).attr('data-id');
 		// read product record based on given ID
-		$.getJSON("http://localhost/esempiTW/REST/api/product/read_one.php?id=" + id, function(data){
+		$.getJSON("http://localhost:82/api/v1/clienti/" + id, function(data){
 			// start html
 			var read_one_product_html=`
 			<!-- when clicked, it will show the product's list -->
 			<div id='read-products' class='btn btn-primary pull-right m-b-15px read-products-button'>
-				<span class='glyphicon glyphicon-list'></span> Read Products
+				<span class='glyphicon glyphicon-list'></span> Lista clienti
 			</div>
 			<!-- product data will be shown in this table -->
 			<table class='table table-bordered table-hover'>
 
-				<!-- product name -->
+				<!-- product id -->
 				<tr>
-					<td class='w-30-pct'>Name</td>
-					<td class='w-70-pct'>` + data.name + `</td>
+					<td>ID</td>
+					<td>` + data.id + `</td>
+				</tr>
+
+				<!-- product username -->
+				<tr>
+					<td class='w-30-pct'>Username</td>
+					<td class='w-70-pct'>` + data.username + `</td>
 				</tr>
  
-				<!-- product price -->
+				<!-- product password -->
 				<tr>
-					<td>Price</td>
-					<td>` + data.price + `</td>
+					<td>Password</td>
+					<td>` + data.password + `</td>
 				</tr>
  
-				<!-- product description -->
+				<!-- product nome -->
 				<tr>
-					<td>Description</td>
-					<td>` + data.description + `</td>
+					<td>Nome</td>
+					<td>` + data.nome_cliente + `</td>
 				</tr>
  
-				<!-- product category name -->
+				<!-- product congome -->
 				<tr>
-					<td>Category</td>
-					<td>` + data.category_name + `</td>
+					<td>Cognome</td>
+					<td>` + data.cognome_cliente + `</td>
+				</tr>
+				
+				<!-- product email -->
+				<tr>
+					<td>Email</td>
+					<td>` + data.email_cliente + `</td>
+				</tr>
+				
+				<!-- product indirizzo -->
+				<tr>
+					<td>Indirizzo</td>
+					<td>` + data.indirizzo + `</td>
+				</tr>
+				
+				<!-- product created at -->
+				<tr>
+					<td>Creato il:</td>
+					<td>` + data.created_at + `</td>
 				</tr>
  
 			</table>`;
@@ -45,7 +69,7 @@ $(document).ready(function(){
 			$("#page-content").html(read_one_product_html);
  
 			// chage page title
-			changePageTitle("Create Product");	
+			changePageTitle("Dettaglio cliente");	
 		});		
     });
 });

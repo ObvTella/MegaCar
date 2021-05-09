@@ -19,13 +19,18 @@ $router->get('/', function () use ($router)
 });
 
 $router->group([
-	'prefix' => 'api/v1', // sito.com/api/v1/[route]
+	'prefix' => 'api/v1', // sito.com/api/v1/[route] ID
 ], function () use ($router)
 {
 	// tutti i clienti
 	$router->get('/clienti', 'ClientiController@index');
+	// 1 solo cliente
+	$router->get('/clienti/{id}', 'ClientiController@detail');
 	// crea un nuovo cliente
 	$router->post('/clienti', 'ClientiController@store');
+	// aggiorna un cliente
+	$router->put('/clienti/', 'ClientiController@update');
 	// cancella un cliente
-	$router->delete('/clienti/{username}', 'ClientiController@destroy');
+	$router->delete('/clienti/{id}', 'ClientiController@destroy');
+
 }); 

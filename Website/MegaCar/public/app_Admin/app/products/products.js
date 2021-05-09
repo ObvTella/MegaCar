@@ -45,17 +45,17 @@ function readProductsTemplate(data, keywords){
             <!-- 'action' buttons -->
             <td class ='text-align-center'>
                 <!-- read product button -->
-                <button class='btn btn-primary m-r-10px read-one-product-button' data-id='` + val.username + `'>
+                <button class='btn btn-primary m-r-10px read-one-product-button' data-id='` + val.id + `'>
                     <span class='glyphicon glyphicon-eye-open'></span> Read
                 </button>
  
                 <!-- edit button -->
-                <button class='btn btn-info m-r-10px update-product-button' data-id='` + val.username + `'>
+                <button class='btn btn-info m-r-10px update-product-button' data-id='` + val.id + `'>
                     <span class='glyphicon glyphicon-edit'></span> Edit
                 </button>
  
                 <!-- delete button -->
-                <button class='btn btn-danger delete-product-button' data-id='` + val.username + `'>
+                <button class='btn btn-danger delete-product-button' data-id='` + val.id + `'>
                     <span class='glyphicon glyphicon-remove'></span> Delete
                 </button>
             </td>

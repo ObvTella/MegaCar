@@ -8,7 +8,7 @@ $(document).ready(function(){
  
 			<!-- 'read products' button to show list of products -->
 			<div id='read-products' class='btn btn-primary pull-right m-b-15px read-products-button'>
-				<span class='glyphicon glyphicon-list'></span> Lista
+				<span class='glyphicon glyphicon-list'></span> Lista clienti
 			</div>		
 
 		<!-- 'create product' html form -->

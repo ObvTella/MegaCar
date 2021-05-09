@@ -3,7 +3,7 @@ $(document).ready(function(){
     // will run if the delete button was clicked
     $(document).on('click', '.delete-product-button', function(){
         // get the product id
-		var username = $(this).attr('data-id');
+		var id = $(this).attr('data-id');
 		
 		// This is where we will use the Bootbox.js library for good looking 'confirm pop up'
 		bootbox.confirm({
@@ -22,7 +22,7 @@ $(document).ready(function(){
 				if(result==true){
 					// send delete request to api / remote server
 					$.ajax({
-						url: "http://localhost:82/api/v1/clienti/" + username,
+						url: "http://localhost:82/api/v1/clienti/" + id,
 						type : "DELETE",
 						success : function(result) {
 							// re-load list of products
