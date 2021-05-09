@@ -4,7 +4,7 @@ Il sito utilizza Lumen come framework.
 XAMPP:   ```localhost:82```  
 Database adattato a Lumen   ```Clienti -> Clientes```  
 phpMyAdmin: gestione database  
-app_Admin: simple work in progress gui per interfacciarsi col database
+app_Admin: simple work in progress gui per interfacciarsi col database solo per testing
 
 ## Setup
 ``` php -S localhost:82 -t ./public ```   
@@ -14,7 +14,8 @@ app_Admin: simple work in progress gui per interfacciarsi col database
 
 ## Screen:
 Interfaccia grafica ancora da creare
-
+### Admin app:
+![basic admin app](https://raw.githubusercontent.com/ObvTella/MegaCar/main/Website/Screenshot/app_AdminScreenshot.PNG)
 ## API:
 ### GET
 * api/v1/clienti/
