@@ -73,6 +73,7 @@ Interfaccia grafica ancora da creare
 	
 ## TODO:
 * API:
+	* Search function 
 	* API per altre tabelle
 	
 * Interfaccia grafica
