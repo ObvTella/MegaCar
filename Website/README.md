@@ -18,63 +18,38 @@ Interfaccia grafica ancora da creare
 ![basic admin app](https://raw.githubusercontent.com/ObvTella/MegaCar/main/Website/Screenshot/app_AdminScreenshot.PNG)
 ## API:
 ### GET
-* api/v1/clienti/
-	```
-	Visualizza cliente:
-	- id
-	- username
-	- password
-	- nome_cliente
-	- cognome_cliente
-	- email_cliente
-	- indirizzo
-	- created_at
-	```
-* api/v1/clienti/id/
-	```
-	Visualizza cliente specifico:
-	- id
-	- username
-	- password
-	- nome_cliente
-	- cognome_cliente
-	- email_cliente
-	- indirizzo
-	- created_at
-	```
+* Visualizza tutto
+	* ```api/v1/clienti/```  
+	* ```api/v1/macchine/```  
+	* ```api/v1/consulenti/```  
+
+* Visualizza specifico
+	* ```api/v1/clienti/id/```
+	* ```api/v1/macchine/id/```
+	* ```api/v1/consulenti/id/```
+
+
 ### POST
-* api/v1/clienti/  
-	```
-	Inserisce cliente:
-	- username
-	- password
-	- nome_cliente
-	- cognome_cliente
-	- email_cliente
-	- indirizzo
-	```
+* Inserimento validato
+	* ```api/v1/clienti/```  
+	* ```api/v1/macchine/``` 
+	* ```api/v1/consulenti/``` 
+
 ### PUT
-* api/v1/clienti/  
-	```
-	Modifica il cliente con l'id del messaggio
-	- id
-	- username
-	- password
-	- nome_cliente
-	- cognome_cliente
-	- email_cliente
-	- indirizzo
-	```
+* Modifica specifico
+	* ```api/v1/clienti/``` 
+	* ```api/v1/macchine/```  
+	* ```api/v1/consulenti/```   
+
 ### DELETE
-* api/v1/clienti/id/  
-	```
-	Cancella cliente con id inserito
-	```
+* Cancella specifico
+	* ```api/v1/clienti/id/```
+	* ```api/v1/macchine/id/```  
+	* ```api/v1/consulenti/id/```  
 	
 ## TODO:
 * API:
 	* Search function 
 	* API per altre tabelle
 	
-* Adattamento database a Lumen (```id``` come chiave primaria, plurali in singolari con s ```tabelle -> tabellas```
 * Interfaccia grafica
