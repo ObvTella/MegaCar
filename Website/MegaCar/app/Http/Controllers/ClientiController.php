@@ -26,7 +26,7 @@ class ClientiController extends Controller
 	{
 		// Validate if the input for each field is correct
 		$this->validate($request, [
-		'username' => 'required|string|max:45',
+		'username' => 'required|unique:clientes|string|max:45',
 		'password' => 'required|string|max:45',
 		'nome_cliente' => 'required|string|max:45',
 		'cognome_cliente' => 'required|string|max:45',
