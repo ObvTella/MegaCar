@@ -1,0 +1,110 @@
+CREATE TABLE Macchinas (
+id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+targa VARCHAR(45) NOT NULL,
+marca VARCHAR(45) NOT NULL,
+modello VARCHAR(45) NOT NULL,
+tipo VARCHAR(45) NOT NULL,
+anno YEAR NOT NULL,
+prezzo FLOAT NOT NULL,
+descrizione_macchina VARCHAR(45) NOT NULL,
+porte INT NOT NULL,
+posti INT NOT NULL,
+usato BOOLEAN NOT NULL);
+
+CREATE TABLE Clientes (
+id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+username VARCHAR(45) NOT NULL UNIQUE,
+password VARCHAR(45) NOT NULL,
+nome_cliente VARCHAR(45) NOT NULL,
+cognome_cliente VARCHAR(45) NOT NULL,
+email_cliente VARCHAR(45) NOT NULL,
+indirizzo VARCHAR(45) NOT NULL,
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
+
+CREATE TABLE Consulentes (
+id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+nome_consulente VARCHAR(45) NOT NULL,
+cognome_consulente VARCHAR(45) NOT NULL,
+email_consulente VARCHAR(45) NOT NULL);
+
+CREATE TABLE Appuntamentos (
+id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+consulente_appuntamento INT NOT NULL,
+cliente_appuntamento INT NOT NULL,
+data_appuntamento DATE NOT NULL,
+ora_appuntamento TIME NOT NULL,
+metodo VARCHAR(45) NOT NULL,
+preventivo VARCHAR(45));
+
+CREATE TABLE Guidas (
+id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+cliente_guida INT NOT NULL,
+veicolo_guida INT NOT NULL,
+data_guida DATE NOT NULL,
+ora_guida TIME NOT NULL);
+
+CREATE TABLE Acquistos (
+id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+cliente_acquisto INT NOT NULL,
+vettura_acquisto INT NOT NULL,
+colore_acquisto INT NOT NULL,
+optional_acquisto INT NOT NULL,
+motore_acquisto INT NOT NULL,
+metodo_acquisto VARCHAR(45) NOT NULL,
+prezzo_acquisto FLOAT NOT NULL,
+data_acquisto DATE NOT NULL);
+
+CREATE TABLE Colores (
+id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+colore VARCHAR(45) NOT NULL);
+
+CREATE TABLE Optionals (
+id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+optional VARCHAR(45) NOT NULL);
+
+CREATE TABLE Motores (
+id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+motore VARCHAR(45) NOT NULL,
+cavalli INT NOT NULL,
+cc FLOAT NOT NULL,
+carburante VARCHAR(45) NOT NULL,
+cambio VARCHAR(45) NOT NULL,
+classe_emissioni VARCHAR(45) NOT NULL);
+
+CREATE TABLE Macchinas_Motores (
+id INT NOT NULL PRIMARY KEY,
+ID_macchina INT NOT NULL,
+ID_motore INT NOT NULL);
+
+CREATE TABLE Macchinas_Optionals (
+id INT NOT NULL PRIMARY KEY,
+ID_macchina INT NOT NULL,
+ID_optional INT NOT NULL);
+
+CREATE TABLE Macchinas_colores (
+id INT NOT NULL PRIMARY KEY,
+ID_macchina INT NOT NULL,
+ID_colore INT NOT NULL);
+
+CREATE TABLE Dettagli_Usatos (
+id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+ID_macchina INT NOT NULL,
+proprietari INT NOT NULL,
+km FLOAT NOT NULL);
+
+ALTER TABLE Appuntamentos ADD FOREIGN KEY (consulente_appuntamento) REFERENCES Consulentes(id);
+ALTER TABLE Appuntamentos ADD FOREIGN KEY (cliente_appuntamento) REFERENCES Clientes(id);
+ALTER TABLE Guidas ADD FOREIGN KEY (cliente_guida) REFERENCES Clientes(id);
+ALTER TABLE Guidas ADD FOREIGN KEY (veicolo_guida) REFERENCES Macchinas(id);
+ALTER TABLE Acquistos ADD FOREIGN KEY (cliente_acquisto) REFERENCES Clientes(id);
+ALTER TABLE Acquistos ADD FOREIGN KEY (vettura_acquisto) REFERENCES Macchinas(id);
+ALTER TABLE Acquistos ADD FOREIGN KEY (colore_acquisto) REFERENCES Macchinas_Colores(id);
+ALTER TABLE Acquistos ADD FOREIGN KEY (optional_acquisto) REFERENCES Macchinas_Optionals(id);
+ALTER TABLE Acquistos ADD FOREIGN KEY (motore_acquisto) REFERENCES Macchinas_Motores(id);
+ALTER TABLE Macchinas_Motores ADD FOREIGN KEY (ID_macchina) REFERENCES Macchinas(id);
+ALTER TABLE Macchinas_Motores ADD FOREIGN KEY (ID_motore) REFERENCES Motores(id);
+ALTER TABLE Macchinas_Optionals ADD FOREIGN KEY (ID_macchina) REFERENCES Macchinas(id);
+ALTER TABLE Macchinas_Optionals ADD FOREIGN KEY (ID_optional) REFERENCES Optionals(id);
+ALTER TABLE Macchinas_Colores ADD FOREIGN KEY (ID_macchina) REFERENCES Macchinas(id);
+ALTER TABLE Macchinas_Colores ADD FOREIGN KEY (ID_colore) REFERENCES Colores(id);
+ALTER TABLE Dettagli_Usatos ADD FOREIGN KEY (ID_macchina) REFERENCES Macchinas(id);
