@@ -1,6 +1,7 @@
 <?php
 namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
+
 class Cliente extends Model 
 {
  /**
@@ -8,7 +9,7 @@ class Cliente extends Model
  *
  * @var array
  */
- public $timestamps = false; //Non si vedono nella tabella
+ public $timestamps = true; //created_at e updated_at
  protected $fillable = [
  'username',
  'password',
@@ -16,6 +17,7 @@ class Cliente extends Model
  'cognome_cliente',
  'email_cliente',
  'indirizzo',
+ 'api_token',
  ];
 }
 ?> 

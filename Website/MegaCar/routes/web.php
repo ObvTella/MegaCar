@@ -13,11 +13,28 @@
 |
 */
 //MAIN ROUTE / (INDEX)
+
 $router->get('/', function () use ($router) 
 {
-	//login
     return $router->app->version();
 });
+	//test auth api_token 
+	/*
+	$router->post('/', [ 'middleware' => ['auth'], function () use ($router) 
+	{
+    	return $router->app->version();
+	}]);
+	*/
+
+	$router->group([
+		'prefix' => 'api/secure', // sito.com/api/secure/[route]/ID
+			//sicurezza
+	], function () use ($router)
+	{
+		//register
+		$router->post('/register', 'AuthController@register');
+		$router->post('/login', 'AuthController@login');
+	}); 
 
 $router->group([
 	'prefix' => 'api/v1', // sito.com/api/v1/[route]/id

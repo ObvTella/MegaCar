@@ -34,6 +34,10 @@ Interfaccia grafica ancora da creare
 	* ```api/v1/clienti/```  
 	* ```api/v1/macchine/``` 
 	* ```api/v1/consulenti/``` 
+* Login sicuro con token renew
+	* ```api/secure/login/```  
+* Register validato con token renew
+	* ```api/secure/register/```  
 
 ### PUT
 * Modifica specifico
@@ -46,6 +50,12 @@ Interfaccia grafica ancora da creare
 	* ```api/v1/clienti/id/```
 	* ```api/v1/macchine/id/```  
 	* ```api/v1/consulenti/id/```  
+	
+## TOKEN
+* ```api/secure/register/``` crea automaticamente un token usando una funzione di hash su un valore generato casualmente  
+* ```api/secure/login/```  aggiorna nello stesso modo il token ad ogni login
+
+[Definire la policy dei token]
 	
 ## TODO:
 * API:

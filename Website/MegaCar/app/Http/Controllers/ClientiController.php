@@ -8,7 +8,6 @@ class ClientiController extends Controller
 	/** @var cliente */
 	protected $cliente;
 	/** 
-	/**
 	* Create a new controller instance.
 	* @return void
 	*/
