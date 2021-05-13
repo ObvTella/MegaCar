@@ -18,6 +18,7 @@ class Cliente extends Model
  'email_cliente',
  'indirizzo',
  'api_token',
+ 'auth_level',
  ];
 }
 ?> 

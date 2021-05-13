@@ -36,10 +36,11 @@ class AuthController extends Controller
         unset($input['conferma_password']); //dealloco conferma password dopo averla verificata
 
         $input['password'] = Hash::make($input['password']); //hash della password
-        $input['api_token'] = sha1(rand()); // api token generata casualmente
+        //$input['api_token'] = sha1(rand()); // api token generata casualmente
+        $input['auth_level'] = 0; //basic user non hanno privilegi
         $query = Cliente::create($input); //creo cliente con query
 
-        $response['api_token'] = $query->api_token; //stampo api token
+        //$response['api_token'] = $query->api_token; //stampo api token
         $response['username'] = $query->username; //stampo username
 
         return response()->json($response, 200); //restituisco json
@@ -70,13 +71,17 @@ class AuthController extends Controller
             $password = $input['password'];
             if (Hash::check($password, $check_user['password'])) //controllo password inserita con password nel databse(hash)
             {
-                $check_user->api_token = sha1(rand());
-                //$check_user->updated_at = freshTimestamp();
-                $check_user->save();
+                if($check_user['auth_level'] == 1)
+                {
+                    $check_user->api_token = sha1(rand());
+                    //$check_user->updated_at = freshTimestamp();
+                    $check_user->save();
+                    $response['api_token'] = $query->api_token;
+                }
                 $response['status'] = 200;
                 $response['message'] = 'Login Successfully';
-
                 return response()->json($response, 200);
+                
             }
             else
             {

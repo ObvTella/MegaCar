@@ -80,7 +80,28 @@ class ClientiController extends Controller
 		
 		return $cliente;
 	}
- 
+	
+	public function updateSuperUser($id) 
+	{
+		$cliente = $this->cliente->findOrFail($id); //cerca id cliente
+		$cliente->auth_level = 1;
+		$check_user->api_token = sha1(rand());
+		$cliente->save();
+		
+		/*
+		$cliente->update
+		(
+		['password' => $request->input('password')],
+		['nome_cliente' => $request->input('nome_cliente')],
+		['cognome_cliente' => $request->input('cognome_cliente')],
+		['email_cliente' => $request->input('email_cliente')],
+		['indirizzo' => $request->input('indirizzo')],
+		);
+		*/
+		
+		return "New SuperAdmin " . $id;
+	}
+	
 	public function detail($id) 
 	{
 		$cliente = $this->cliente->findOrFail($id);

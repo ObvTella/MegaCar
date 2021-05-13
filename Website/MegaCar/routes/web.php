@@ -27,7 +27,7 @@ $router->get('/', function () use ($router)
 	*/
 
 	$router->group([
-		'prefix' => 'api/secure', // sito.com/api/secure/[route]/ID
+		'prefix' => 'api/welcome', // sito.com/api/welcome/[route]/ID
 			//sicurezza
 	], function () use ($router)
 	{
@@ -48,7 +48,9 @@ $router->group([
 	// crea un nuovo cliente
 	$router->post('/clienti', 'ClientiController@store');
 	// aggiorna un cliente
-	$router->put('/clienti/', 'ClientiController@update');
+	$router->put('/clienti', 'ClientiController@update');
+	// aggiorno cliente in superuser
+	$router->post('/clienti/{id}', 'ClientiController@updateSuperUser');
 	// cancella un cliente
 	$router->delete('/clienti/{id}', 'ClientiController@destroy');
 
@@ -60,7 +62,7 @@ $router->group([
 	// crea un nuovo consulente
 	$router->post('/consulenti', 'ConsulentiController@store');
 	// aggiorna un consulente
-	$router->put('/consulenti/', 'ConsulentiController@update');
+	$router->put('/consulenti', 'ConsulentiController@update');
 	// cancella un consulente
 	$router->delete('/consulenti/{id}', 'ConsulentiController@destroy');
 	
@@ -72,10 +74,22 @@ $router->group([
 	// crea una nuova macchine
 	$router->post('/macchine', 'MacchineController@store');
 	// aggiorna una macchine
-	$router->put('/macchine/', 'MacchineController@update');
+	$router->put('/macchine', 'MacchineController@update');
 	// cancella una macchine
 	$router->delete('/macchine/{id}', 'MacchineController@destroy');
 
+}); 
+
+$router->group([
+	'prefix' => 'api/secure', 'middleware' => ['auth'], // sito.com/api/v1/[route]/id
+	//'middleware' => ['auth'] -> controlla autorizzazione prima di chiamare il controller
+	//v1 semplici funzioni su chiavi primarie
+], function () use ($router)
+{
+	// aggiorno cliente in superuser
+	$router->post('/clienti/{id}', 'ClientiController@updateSuperUser');
+	// cancella un cliente
+	$router->delete('/clienti/{id}', 'ClientiController@destroy');
 }); 
 
 $router->group([
